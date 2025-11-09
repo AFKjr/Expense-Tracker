@@ -282,5 +282,47 @@ if (incomes.length > 0) {
     updateIncomeTotal();
 }
 
+const clearAllExpensesButton = document.getElementById('clear-all-expenses');
+const clearAllIncomesButton = document.getElementById('clear-all-income');
+
+function clearAllExpenses()
+{
+    if (expenses.length === 0) 
+    {
+        alert("No expenses to clear.");
+        return;
+    }
+
+    const confirmed = confirm(`Are you sure you want to clear all ${expenses.length} expenses?`);
+    if (confirmed) 
+{
+        expenses.length = 0;
+        saveExpensesToStorage(expenses);
+        refreshExpenseList();
+        updateTotalsPanel();
+    }
+}
+
+function clearAllIncomes()
+{
+    if (incomes.length === 0) 
+    {
+        alert("No incomes to clear.");
+        return;
+    }
+
+    const confirmed = confirm(`Are you sure you want to clear all ${incomes.length} incomes?`);
+    if (confirmed) 
+    {
+        incomes.length = 0;
+        saveIncomesToStorage(incomes);
+        refreshIncomeList();
+        updateIncomeTotal();
+        updateTotalsPanel();
+    }
+}
+
+clearAllExpensesButton.addEventListener('click', clearAllExpenses);
+clearAllIncomesButton.addEventListener('click', clearAllIncomes);
 expenseForm.addEventListener('submit', handleExpenseSubmission);
 
