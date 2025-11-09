@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1><strong>Bill</strong> and <strong>Expense Tracker</strong></h1>
+    <h3><strong>Track your expenses effortlessly!</strong></h3>
+    <h2>Enter your expenses below:</h2>
+    <form id="expense-form">
+        <input type="text" id="description" placeholder="Expense description" required>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <button type="submit">Add Expense</button>
+    </form>
+    <form id="income-form">
+        <input type="text" id="income-description" placeholder="Income description" required>
+        <input type="number" id="income-amount" placeholder="Income amount" required>
+        <button type="submit" id="add-income">Add Income</button>
+    </form>
+    <div class="split-container">
+        <div class="left-panel">
+            <h2>Expenses</h2>
+            <div id="expense-list"></div>
+        </div>
+        <div class="center-panel">
+            <h2>Total</h2>
+            <div id="totals-panel"></div>
+        </div>
+        <div class="right-panel">
+            <h2>Income</h2>
+            <div id="income-list"></div>
+            <div id="income-total"></div>
+        </div>
+    </div>
+    <script src="calculations.js"></script>
+    <script src="storage.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
